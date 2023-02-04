@@ -10,7 +10,7 @@
   },
   "scripts": {
     "ts-build": "yarn tsc",
-    "build": "echo \"hello!\"",
+    "build": "yarn install",
     "start": "node dist/index.js",
     "dev": "nodemon index.ts"
   }
