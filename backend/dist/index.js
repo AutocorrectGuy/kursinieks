@@ -9,7 +9,8 @@ const path_1 = __importDefault(require("path"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3001;
-const BUILD_DIR = path_1.default.join(__dirname, '../../frontend/build');
+const BUILD_DIR = path_1.default.join(__dirname, '../frontend/build');
+console.log(BUILD_DIR);
 app.use(express_1.default.static(BUILD_DIR));
 app.get('*', (req, res) => {
     console.log(`Hello visitor on port ${process.env.PORT}`);
