@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sudokupets
+    env: node
+    plan: free
+    buildCommand: yarn build
+    startCommand: yarn start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET_KEY
+        generateValue: true
