@@ -5,7 +5,7 @@ import path from 'path'
 dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3001
-const BUILD_DIR = path.join(__dirname, '../../frontend/build')
+const BUILD_DIR = path.join(__dirname, '../frontend/build')
 
 app.use(express.static(BUILD_DIR))
 app.get('*', (req, res) => {
