@@ -5,7 +5,7 @@ import path from 'path'
 dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3001
-const BUILD_DIR = '../frontend/build'
+const BUILD_DIR = 'build'
 console.log(BUILD_DIR)
 
 app.use(express.static(BUILD_DIR))
