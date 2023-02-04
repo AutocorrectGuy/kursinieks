@@ -1,0 +1,12 @@
+{
+	"name": "Sudoku-pets",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/AutocorrectGuy/Sudoku-pets.git",
+	"author": "AutocorrectGuy <martins.sturainis.lspa@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"build": "cd backend && yarn build",
+		"start": "cd backend && yarn start"
+	}
+}
