@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c98f59c3.css",
+    "main.js": "/static/js/main.120dcf24.js",
+    "static/media/sudokuBoard.png": "/static/media/sudokuBoard.ca047f371a4b87a72b66.png",
+    "index.html": "/index.html",
+    "main.c98f59c3.css.map": "/static/css/main.c98f59c3.css.map",
+    "main.120dcf24.js.map": "/static/js/main.120dcf24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c98f59c3.css",
+    "static/js/main.120dcf24.js"
+  ]
+}
