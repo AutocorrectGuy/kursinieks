@@ -1,12 +1,18 @@
+import Game from './pages/Game'
+import NotFound from './pages/NotFound'
 import './services/tailwindcss/output.css'
-import Navbar from './components/Navbar'
-import GameLayout from './components/GameLayout'
+import {
+	RouterProvider,
+	createBrowserRouter,
+} from 'react-router-dom'
 
 const App = () => (
-	<div className="min-h-screen h-auto">
-		<Navbar />
-		<GameLayout />
-	</div>
+	<RouterProvider
+		router={createBrowserRouter([
+			{ path: '/', element: <Game /> },
+			{ path: '*', element: <NotFound /> },
+		])}
+	/>
 )
 
 export default App
