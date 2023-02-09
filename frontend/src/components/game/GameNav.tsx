@@ -1,8 +1,5 @@
-import React from 'react'
 
-type Props = {}
-
-const GameNav = (props: Props) => {
+const GameNav = () => {
 	return (
 		<div className="text-md grid grid-cols-3 px-4 sm:px-8 h-12 items-center sm:text-xl">
 			<div>

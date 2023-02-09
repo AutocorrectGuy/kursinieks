@@ -1,13 +1,11 @@
-import React from 'react'
 import sudokuBoardImg from '../../assets/img/sudokuBoard.png'
 import GameNav from './GameNav'
 import ActionBtn from './ActionBtn'
 
-type Props = {}
-
-const GameLayout = (props: Props) => {
+const GameLayout = () => {
 	return (
 		<div className="min-h-screen w-full bg-black bg-opacity-25">
+			<div>Meistars</div>
 			<div className="flex h-28 items-center justify-end px-4 sm:px-8">
 				<ActionBtn
 					textValue="New game"

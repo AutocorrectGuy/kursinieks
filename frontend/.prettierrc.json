@@ -6,5 +6,5 @@
   "singleQuote": true,
   "bracketSameLine": false,
   "singleAttributePerLine": true,
-  "printWidth": 60
+  "printWidth": 80
 }
