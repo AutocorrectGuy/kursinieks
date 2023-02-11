@@ -4,14 +4,13 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import ImageComponent from '../ImageComponent'
 import 'slick-carousel/slick/slick.css'
 
-type Props = {}
-
-const FaceSlider = (props: Props) => {
+const FaceSlider = () => {
 	var settings: SliderSettings = {
 		infinite: true,
 		speed: 150,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		lazyLoad: 'ondemand',
 		prevArrow: (
 			<div className="block">
 				<div

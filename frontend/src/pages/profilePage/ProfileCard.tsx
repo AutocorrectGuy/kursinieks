@@ -6,7 +6,7 @@ import { useState } from 'react'
 type Props = {}
 
 const ProfileCard = (props: Props) => {
-	const [nameValue, setNameValue] = useState<string>('Vārds')
+	const [nameValue, setNameValue] = useState<string>('')
 
 	return (
 		<div className="w-full max-w-[340px] rounded-lg border border-cyan-900 p-4 shadow-lg shadow-sky-800">
