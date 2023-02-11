@@ -47,6 +47,7 @@ const FaceSlider = () => {
 			{[...Array(18)].map((x, i) => (
 				<ImageComponent
 					filename={`f (${i + 1}).png`}
+					hClass={'h-[320px]'}
 					key={`prof-pic-${i}`}
 				/>
 			))}
