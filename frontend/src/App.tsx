@@ -1,4 +1,5 @@
 import './services/tailwindcss/output.css'
+import 'slick-carousel/slick/slick.css'
 import { pagesOptions } from './PagesOptions'
 import {
 	RouterProvider,

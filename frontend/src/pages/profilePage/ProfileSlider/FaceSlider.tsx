@@ -2,7 +2,6 @@ import Slider, { Settings as SliderSettings } from 'react-slick'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import ImageComponent from '../ImageComponent'
-import 'slick-carousel/slick/slick.css'
 
 const FaceSlider = () => {
 	var settings: SliderSettings = {
