@@ -39,7 +39,7 @@ export const pagesOptions: NavOptionInterface[] = [
 	{
 		textValue: 'Informācijas un komunikāciju tehnoloģijas',
 		icon: faDragon,
-		href: '/1',
+		href: '/tema-1',
 		isActive: false,
 		isAchievement: true,
 		id: '9faa5592-a813-11ed-afa1-0242ac120002'
@@ -47,7 +47,7 @@ export const pagesOptions: NavOptionInterface[] = [
 	{
 		textValue: 'Viesmīlības pakalpojumi',
 		icon: faBlind,
-		href: '/2',
+		href: '/tema-2',
 		isActive: false,
 		isAchievement: true,
 		id: 'a6d03472-a813-11ed-afa1-0242ac120002'
@@ -55,7 +55,7 @@ export const pagesOptions: NavOptionInterface[] = [
 	{
 		textValue: 'Matemātika',
 		icon: faCalculator,
-		href: '/3',
+		href: '/tema-3',
 		isActive: false,
 		isAchievement: true,
 		id: 'ae12c312-a813-11ed-afa1-0242ac120002'
@@ -63,7 +63,7 @@ export const pagesOptions: NavOptionInterface[] = [
 	{
 		textValue: 'Ražas sagatavošana',
 		icon: faCrop,
-		href: '/4',
+		href: '/tema-4',
 		isActive: false,
 		isAchievement: true,
 		id: 'b41506ee-a813-11ed-afa1-0242ac120002'
@@ -71,7 +71,7 @@ export const pagesOptions: NavOptionInterface[] = [
 	{
 		textValue: 'Latviešu valoda',
 		icon: faClipboard,
-		href: '/5',
+		href: '/tema-5',
 		isActive: false,
 		isAchievement: true,
 		id: 'b8710e0e-a813-11ed-afa1-0242ac120002'

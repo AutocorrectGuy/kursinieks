@@ -16,35 +16,33 @@ const NavbarLeftSide = () => {
 	return (
 		<div
 			className={[
-				'flex',
+				'fixed flex',
 				navOpen && window.innerWidth < 640
-					? 'fixed z-50 h-screen w-full bg-slate-900'
-					: '',
+					? 'z-50 h-screen w-full bg-slate-900'
+					: 'w-full max-w-[300px]',
 			].join(' ')}
 		>
 			{navOpen && window.innerWidth < 640 && <div className={minNavWidth} />}
 			<span
 				className={[
 					'h-screen-translate-x-full transition-transform sm:translate-x-0',
-					navOpen
-						? 'border-r border-r-slate-700 bg-slate-800'
-						: 'z-50',
+					navOpen ? 'border-r border-r-slate-700 bg-slate-800' : 'z-50',
 					navOpen && window.innerWidth < 640
 						? 'fixed inset-0 z-50 w-screen'
-						: 'max-w-[340px]',
+						: 'w-full max-w-[340px]',
 				].join(' ')}
 			>
 				<div
 					className={[
-						'h-full overflow-y-auto py-4 px-1',
-						navOpen ? '' : minNavWidth,
+						'fixed py-4 px-1',
+						navOpen ? 'left-0 h-full' : 'left-4',
 						navOpen && window.innerWidth < 640 ? 'w-screen' : '',
 					].join(' ')}
 				>
 					<div
 						className={[
-							'flex cursor-pointer items-center font-permanent-marker text-slate-300',
-							navOpen ? 'pl-2' : 'justify-center',
+							'flex cursor-pointer items-start text-slate-300',
+							navOpen ? 'pl-4' : 'justify-center',
 						].join(' ')}
 						onClick={() =>
 							setNavOpen((prevOpen) => {
@@ -53,7 +51,7 @@ const NavbarLeftSide = () => {
 							})
 						}
 					>
-						<div className="flex h-10 items-center">
+						<div className="flex h-14 items-center">
 							<FontAwesomeIcon
 								icon={faBars}
 								className="h-7 w-7"
@@ -61,7 +59,7 @@ const NavbarLeftSide = () => {
 							{navOpen && (
 								<div
 									className={[
-										' select-none items-center pl-2 text-3xl',
+										'font-permanent-marker select-none items-center pl-2 text-3xl',
 										navOpen ? 'ml-2' : '',
 									].join(' ')}
 								>
@@ -70,20 +68,27 @@ const NavbarLeftSide = () => {
 							)}
 						</div>
 					</div>
-					<ul className="rounded-md pt-4">
-						{buttonsState.map(({ href, icon, textValue }, i) => (
-							<NavLeftBtn
-								textValue={navOpen ? textValue : ''}
-								icon={icon}
-								href={href}
-								isActive={location.pathname === href}
-								isAchievement={false}
-								id=""
-								navOpen={navOpen}
-								setNavOpen={setNavOpen}
-								key={`nav-left-btn-${i}`}
-							/>
-						))}
+					<ul
+						className={[
+							navOpen && 'rounded-lg shadow-md shadow-slate-900 p-2 border border-slate-700 bg-slate-800'
+						].join(' ')}
+					>
+						{buttonsState.map(
+							({ href, icon, textValue }, i) =>
+								navOpen && (
+									<NavLeftBtn
+										textValue={navOpen ? textValue : ''}
+										icon={icon}
+										href={href}
+										isActive={location.pathname === href}
+										isAchievement={false}
+										id=""
+										navOpen={navOpen}
+										setNavOpen={setNavOpen}
+										key={`nav-left-btn-${i}`}
+									/>
+								)
+						)}
 					</ul>
 				</div>
 			</span>

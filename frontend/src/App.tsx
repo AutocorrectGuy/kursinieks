@@ -1,7 +1,6 @@
 import './services/tailwindcss/output.css'
 import { pagesOptions } from './PagesOptions'
 import {
-	RouteObject,
 	RouterProvider,
 	createBrowserRouter,
 } from 'react-router-dom'
@@ -10,6 +9,8 @@ import NotFound from './pages/NotFound'
 import DefaultLayout from './layouts/DefaultLayout'
 import GameLayout from './components/game/GameLayout'
 import Achievements from './pages/achievementPage/Achievements'
+import Informatika from './pages/subjects/Informatika/Informatika';
+import ProfilePage from './pages/profilePage/ProfilePage';
 
 const App = () => (
 	<RouterProvider
@@ -22,24 +23,24 @@ const App = () => (
 						let component
 						switch (href) {
 							case '/':
-								component = <GameLayout />
+								component = <ProfilePage />
 								break
 							case '/achievements':
 								component = <Achievements />
 								break
-							case '/1':
+							case '/tema-1':
+								component = <Informatika />
+								break
+							case '/tema-2':
 								component = <GameLayout />
 								break
-							case '/2':
+							case '/tema-3':
 								component = <GameLayout />
 								break
-							case '/3':
+							case '/tema-4':
 								component = <GameLayout />
 								break
-							case '/4':
-								component = <GameLayout />
-								break
-							case '/5':
+							case '/tema-5':
 								component = <GameLayout />
 								break
 							default:

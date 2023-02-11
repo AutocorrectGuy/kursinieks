@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         'permanent-marker': ['Permanent Marker', 'cursive'],
         'comic-neue': ['Comic Neue', 'cursive'],
+        'source-sans-pro': ['Source Sans Pro', 'sans-serif'],
       },
     },
   },
