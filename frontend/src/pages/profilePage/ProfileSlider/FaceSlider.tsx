@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react'
 import Skeleton from 'react-loading-skeleton'
+import FaceSliderOpts from './FaceSliderOpts'
 
 const FaceSlider = () => {
 	const [images, setImages] = useState<string[]>([])
@@ -28,7 +29,7 @@ const FaceSlider = () => {
 			<div className="block">
 				<div
 					className={
-						'absolute left-0 top-1/2 z-10 flex h-[250px] w-[24px] -translate-y-1/2 -translate-x-[100%] cursor-pointer items-center justify-center text-cyan-300 hover:text-white'
+						'absolute left-0 top-1/2 z-10 flex h-[250px] w-[24px] -translate-y-1/2 -translate-x-[130%] cursor-pointer items-center justify-center text-cyan-300 hover:text-white'
 					}
 				>
 					<FontAwesomeIcon
@@ -42,7 +43,7 @@ const FaceSlider = () => {
 			<div className="block">
 				<div
 					className={
-						'absolute right-0 top-1/2 z-10 flex h-[250px] w-[24px] -translate-y-1/2 translate-x-[100%] cursor-pointer items-center justify-center text-cyan-300 hover:text-white'
+						'absolute right-0 top-1/2 z-10 flex h-[250px] w-[24px] -translate-y-1/2 translate-x-[130%] cursor-pointer items-center justify-center text-cyan-300 hover:text-white'
 					}
 				>
 					<FontAwesomeIcon
@@ -54,21 +55,30 @@ const FaceSlider = () => {
 		),
 	}
 	return (
-		<div className="h-[320px]">
+		<div className="my-10">
 			{!imagesLoaded ? (
-				<Skeleton baseColor='#1E293B' highlightColor='#18354E' height={320} />
+				<Skeleton
+					baseColor="#1E293B"
+					highlightColor="#18354E"
+					height={320}
+				/>
 			) : (
-				<Slider
-					{...settings}
-					className="mx-auto h-[320px] w-[256px]"
-				>
-					{images.map((image) => (
-						<img
-							src={image}
-							alt=""
-						/>
-					))}
-				</Slider>
+				<div className="rounded-lg bg-sky-700 bg-opacity-10">
+					<FaceSliderOpts />
+					<div >
+						<Slider
+							{...settings}
+							className="mx-auto h-64 w-64"
+						>
+							{images.map((image) => (
+								<img
+									src={image}
+									alt=""
+								/>
+							))}
+						</Slider>
+					</div>
+				</div>
 			)}
 		</div>
 	)

@@ -3,24 +3,37 @@ import NextBtn from './NextBtn'
 import FaceSlider from './ProfileSlider/FaceSlider'
 import { useState } from 'react'
 
-type Props = {}
-
-const ProfileCard = (props: Props) => {
-	const [nameValue, setNameValue] = useState<string>('')
+const ProfileCard = () => {
+	const [name, setName] = useState<string>('')
+	const [profession, setProfession] = useState<string>('')
 
 	return (
 		<div className="w-full max-w-[340px] rounded-lg border border-cyan-900 p-4 shadow-lg shadow-sky-800">
+			<div className="select-none rounded-lg bg-slate-700 py-2 text-center text-xl">
+				<span className="text-slate-300">Izveido savu&nbsp;</span>
+				<span className="text-white bg-slate-800 bg-opacity-50 pb-1 px-2 rounded-md">personāžu</span>
+			</div>
 			<FaceSlider />
-			<div className="flex items-center pt-4 pb-10">
+			<div className="flex items-center text-xl">
+				<div className="w-36 font-semibold text-slate-300">Vārds:</div>
 				<input
-					className="placeholder:font-medium mx-auto w-full max-w-[240px] rounded-lg bg-slate-700 py-2 px-2 text-center text-2xl font-semibold tracking-tight text-slate-100 outline-none focus:outline-none"
-					value={nameValue}
-					onChange={(e) => setNameValue(e.currentTarget.value)}
-					placeholder={'Tavs vārds'}
+					className="mx-auto w-full max-w-[240px] rounded-lg bg-slate-700 py-1 px-3 font-semibold tracking-tight text-slate-100 outline-none placeholder:font-medium placeholder:text-slate-500 focus:outline-none"
+					value={name}
+					onChange={(e) => setName(e.currentTarget.value)}
+					placeholder={'...'}
 				/>
 			</div>
-			<div className="flex w-full justify-center mb-4">
-				<NextBtn />
+			<div className="flex items-center py-4  text-xl">
+				<div className="w-36 font-semibold text-slate-300">Profesija:</div>
+				<input
+					className="mx-auto w-full max-w-[240px] rounded-lg bg-slate-700 py-1 px-3 font-semibold tracking-tight text-slate-100 outline-none placeholder:font-medium placeholder:text-slate-500 focus:outline-none"
+					value={profession}
+					onChange={(e) => setProfession(e.currentTarget.value)}
+					placeholder={'Izvēlies profesiju'}
+				/>
+			</div>
+			<div className="my-4 flex w-full justify-center">
+				<NextBtn textValue="Izveidot" />
 			</div>
 		</div>
 	)
