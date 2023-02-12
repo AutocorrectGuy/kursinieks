@@ -1,15 +1,29 @@
 import Slider, { Settings as SliderSettings } from 'react-slick'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import ImageComponent from '../ImageComponent'
+import { useState, useEffect } from 'react'
+import Skeleton from 'react-loading-skeleton'
 
 const FaceSlider = () => {
+	const [images, setImages] = useState<string[]>([])
+	const [imagesLoaded, setImagesLoaded] = useState<boolean>(false)
+
+	useEffect(() => {
+		Promise.all(
+			[...Array(18)].map(
+				async (x, i) => import(`../../../assets/img/profile/f (${i + 1}).png`)
+			)
+		).then((srcArr) => {
+			setImages(srcArr.map((src) => src.default))
+			setImagesLoaded(true)
+		})
+	}, [])
+
 	var settings: SliderSettings = {
 		infinite: true,
 		speed: 150,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		lazyLoad: 'ondemand',
 		prevArrow: (
 			<div className="block">
 				<div
@@ -40,18 +54,23 @@ const FaceSlider = () => {
 		),
 	}
 	return (
-		<Slider
-			{...settings}
-			className="mx-auto w-[256px]"
-		>
-			{[...Array(18)].map((x, i) => (
-				<ImageComponent
-					filename={`f (${i + 1}).png`}
-					hClass={'h-[320px]'}
-					key={`prof-pic-${i}`}
-				/>
-			))}
-		</Slider>
+		<div className="h-[320px]">
+			{!imagesLoaded ? (
+				<Skeleton baseColor='#1E293B' highlightColor='#18354E' height={320} />
+			) : (
+				<Slider
+					{...settings}
+					className="mx-auto h-[320px] w-[256px]"
+				>
+					{images.map((image) => (
+						<img
+							src={image}
+							alt=""
+						/>
+					))}
+				</Slider>
+			)}
+		</div>
 	)
 }
 

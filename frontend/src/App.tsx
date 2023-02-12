@@ -1,5 +1,7 @@
 import './services/tailwindcss/output.css'
 import 'slick-carousel/slick/slick.css'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 import { pagesOptions } from './PagesOptions'
 import {
 	RouterProvider,
