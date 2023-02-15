@@ -18,7 +18,7 @@ const NavbarLeftSide = () => {
 			className={[
 				'fixed flex',
 				navOpen && window.innerWidth < 640
-					? 'z-50 h-screen w-full bg-slate-900'
+					? 'z-50 h-screen w-full'
 					: 'w-full max-w-[300px]',
 			].join(' ')}
 		>
@@ -26,7 +26,7 @@ const NavbarLeftSide = () => {
 			<span
 				className={[
 					'h-screen-translate-x-full transition-transform sm:translate-x-0',
-					navOpen ? 'border-r border-r-slate-700 bg-slate-800' : 'z-50',
+					navOpen ? 'border-r border-r-jak-gray-700 bg-jak-gray-800' : 'z-50',
 					navOpen && window.innerWidth < 640
 						? 'fixed inset-0 z-50 w-screen'
 						: 'w-full max-w-[340px]',
@@ -34,15 +34,15 @@ const NavbarLeftSide = () => {
 			>
 				<div
 					className={[
-						'fixed py-4 px-1',
-						navOpen ? 'left-0 h-full' : 'left-4',
+						'fixed py-4 px-1 w-screen',
+						navOpen ? 'left-0 h-full' : '',
 						navOpen && window.innerWidth < 640 ? 'w-screen' : '',
 					].join(' ')}
 				>
 					<div
 						className={[
-							'flex cursor-pointer items-start text-slate-300',
-							navOpen ? 'pl-4' : 'justify-center',
+							'flex cursor-pointer items-start text-jak-gray-100',
+							navOpen ? 'pl-4 pb-4' : 'pl-4',
 						].join(' ')}
 						onClick={() =>
 							setNavOpen((prevOpen) => {
@@ -51,7 +51,7 @@ const NavbarLeftSide = () => {
 							})
 						}
 					>
-						<div className="flex h-14 items-center">
+						<div className="flex h-6 items-center">
 							<FontAwesomeIcon
 								icon={faBars}
 								className="h-7 w-7"
@@ -59,7 +59,7 @@ const NavbarLeftSide = () => {
 							{navOpen && (
 								<div
 									className={[
-										'font-permanent-marker select-none items-center pl-2 text-3xl',
+										'select-none items-center pl-2 font-permanent-marker text-3xl',
 										navOpen ? 'ml-2' : '',
 									].join(' ')}
 								>
@@ -70,7 +70,8 @@ const NavbarLeftSide = () => {
 					</div>
 					<ul
 						className={[
-							navOpen && 'rounded-lg shadow-md shadow-slate-900 p-2 border border-slate-700 bg-slate-800'
+							navOpen &&
+								'rounded-lg border border-jak-gray-700 bg-jak-gray-800 p-2 shadow-md shadow-jak-gray-900',
 						].join(' ')}
 					>
 						{buttonsState.map(

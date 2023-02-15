@@ -1,37 +1,86 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faUser, faVenusMars } from '@fortawesome/free-solid-svg-icons'
 import { FaEyebrow, FaLips, FaNose } from './SpecialIcons'
+import { useState } from 'react'
+import { facesSliderOptType } from './FaceSlider'
 
-const FaceSliderOpts = () => {
-	return (
-		<div className="grid grid-cols-6 gap-1 p-2">
-			<div className="flex items-center justify-center rounded-xl  bg-slate-700 text-slate-800 shadow-sm hover:bg-white cursor-pointer">
+type SliderOptButtonType = { name: facesSliderOptType; icon: JSX.Element }
+type Props = {
+	selectedAssetState: [
+		facesSliderOptType,
+		React.Dispatch<React.SetStateAction<facesSliderOptType>>
+	]
+}
+
+const FaceSliderOpts = ({ selectedAssetState }: Props) => {
+	const [buttons] = useState<SliderOptButtonType[]>([
+		{
+			name: 'gender',
+			icon: (
 				<FontAwesomeIcon
 					icon={faVenusMars}
 					className="h-8 w-8"
 				/>
-			</div>
-			<div className="flex items-center justify-center rounded-xl bg-cyan-300 text-slate-800 shadow-sm hover:bg-white cursor-pointer">
+			),
+		},
+		{
+			name: 'body',
+			icon: (
 				<FontAwesomeIcon
 					icon={faUser}
 					className="h-8 w-8"
 				/>
-			</div>
-			<div className="flex items-center justify-center rounded-xl bg-slate-700 text-slate-800 shadow-sm hover:bg-white cursor-pointer">
+			),
+		},
+		{
+			name: 'eyes',
+			icon: (
 				<FontAwesomeIcon
 					icon={faEye}
 					className="h-8 w-8"
 				/>
-			</div>
-			<div className="flex items-center justify-center rounded-xl bg-slate-700 text-slate-800 shadow-sm hover:bg-white cursor-pointer">
-				<FaEyebrow />
-			</div>
-			<div className="flex items-center justify-center rounded-xl bg-slate-700 text-slate-800 shadow-sm hover:bg-white cursor-pointer">
-				<FaNose />
-			</div>
-			<div className="flex items-center justify-center rounded-xl bg-slate-700 text-slate-800 shadow-sm hover:bg-white cursor-pointer">
-				<FaLips />
-			</div>
+			),
+		},
+		{
+			name: 'eyebrows',
+			icon: <FaEyebrow />,
+		},
+		{
+			name: 'nose',
+			icon: <FaNose />,
+		},
+		{
+			name: 'mouth',
+			icon: <FaLips />,
+		},
+	])
+	const [selectedAsset, setSelectedAsset] = selectedAssetState
+
+	return (
+		<div className="grid grid-cols-6 gap-1 fill-jak-gray-100 p-2 text-jak-gray-100">
+			{buttons.map(({ icon, name }) => (
+				<div
+					key={`face-slier-opt-btn-${name}`}
+					className={[
+						'cursor-pointer rounded-xl border-b-[6px]',
+						name === selectedAsset
+							? 'border-b-transparent bg-transparent text-jak-gray-900'
+							: 'border-b-jak-gray-900 bg-jak-gray-900',
+					].join(' ')}
+					onClick={() => setSelectedAsset(name)}
+				>
+					<div
+						className={[
+							'flex h-full items-center justify-center rounded-lg py-1',
+							name === selectedAsset
+								? 'translate-y-[4px] bg-jak-green-500'
+								: 'bg-jak-gray-700 hover:bg-jak-gray-500',
+						].join(' ')}
+					>
+						{icon}
+					</div>
+				</div>
+			))}
 		</div>
 	)
 }

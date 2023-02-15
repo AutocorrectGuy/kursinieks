@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 const DefaultLayout = () => {
   return (
-    <div className="min-h-screen bg-slate-800">
+    <div className="min-h-screen bg-jak-gray-900">
     <div className="flex">
       <NavbarLeftSide />
       <Outlet />

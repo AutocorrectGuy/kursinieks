@@ -19,9 +19,8 @@ const SudokuCell = ({
 	setSelected,
 	isSelected,
 	i,
-	cellSize
+	cellSize,
 }: SudokuCellType) => {
-
 	const [calculatedBorders] = useState<string>(
 		[
 			!(i % 9) && 'border-l',
@@ -37,7 +36,7 @@ const SudokuCell = ({
 		fontSize: `${cellSize * 0.8}px`,
 	}
 
-	const cellClass = (currValue: number|null) => {
+	const cellClass = (currValue: number | null) => {
 		let bgColor = ''
 		if (isSelected) {
 			bgColor += 'bg-[#BBDEFC]'
@@ -66,9 +65,13 @@ const SudokuCell = ({
 					setSelected(() => i)
 
 					const rowI = Math.floor(i / 9)
+					console.log(`rowIndex: ${rowI}`)
 					const rowStartI = rowI * 9
+					console.log(`rowStartIndex: ${rowStartI}`)
 					const colI = i - rowStartI
+					console.log(`colIndex: ${colI}`)
 					const blockStart = rowStartI + colI - 9 * (rowI % 3) - (colI % 3)
+					console.log(`blockStartIndex: ${blockStart}`)
 
 					return [
 						...[...Array(9)].map((x, j) => j + rowStartI),
@@ -78,7 +81,8 @@ const SudokuCell = ({
 				})
 			}
 		>
-			{currentValue}
+			{/* {currentValue} */}
+			{i}
 		</div>
 	)
 }
