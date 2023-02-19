@@ -16,11 +16,7 @@ const FaceSliderArrow = ({
 	<div
 		className="block"
 		{...props}
-		onClick={(e) => {
-			if(onClick !== undefined) {
-				onClick(e)
-			}
-		}}
+		onClick={(e) => onClick !== undefined && onClick(e)}
 	>
 		<div
 			className={[

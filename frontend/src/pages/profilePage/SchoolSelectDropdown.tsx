@@ -26,7 +26,8 @@ const SchoolSelectDropdown = () => {
 	])
 
 	return (
-		<div className="z-10 w-full">
+		// <div className="z-10 w-full">
+		<div className="z-0 w-full">
 			<Select
 				menuPlacement="top"
 				placeholder={'Izvēlies'}
