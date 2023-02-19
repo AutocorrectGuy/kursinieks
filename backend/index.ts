@@ -5,12 +5,11 @@ import path from 'path'
 dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3001
-const BUILD_PATH = __dirname + '/build/'
 
-app.use(express.static(BUILD_PATH))
+app.use(express.static(`${__dirname}/build`))
+
 app.get('*', (req, res) => {
-	console.log(BUILD_PATH)
-	res.sendFile(BUILD_PATH + 'index.html')
+	res.sendFile(`${__dirname}/build/index.html`)
 })
 
 app.listen(PORT, () => {

@@ -8,11 +8,9 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3001;
-const BUILD_PATH = __dirname + '/build/';
-app.use(express_1.default.static(BUILD_PATH));
+app.use(express_1.default.static(`${__dirname}/build`));
 app.get('*', (req, res) => {
-    console.log(BUILD_PATH);
-    res.sendFile(BUILD_PATH + 'index.html');
+    res.sendFile(`${__dirname}/build/index.html`);
 });
 app.listen(PORT, () => {
     console.log(`⚡️Listening to port ${PORT}`);
