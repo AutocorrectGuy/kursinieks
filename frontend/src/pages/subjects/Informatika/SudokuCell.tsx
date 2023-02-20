@@ -65,13 +65,9 @@ const SudokuCell = ({
 					setSelected(() => i)
 
 					const rowI = Math.floor(i / 9)
-					console.log(`rowIndex: ${rowI}`)
 					const rowStartI = rowI * 9
-					console.log(`rowStartIndex: ${rowStartI}`)
 					const colI = i - rowStartI
-					console.log(`colIndex: ${colI}`)
 					const blockStart = rowStartI + colI - 9 * (rowI % 3) - (colI % 3)
-					console.log(`blockStartIndex: ${blockStart}`)
 
 					return [
 						...[...Array(9)].map((x, j) => j + rowStartI),
@@ -81,8 +77,8 @@ const SudokuCell = ({
 				})
 			}
 		>
-			{/* {currentValue} */}
-			{i}
+			{currentValue}
+			{/* {i} */}
 		</div>
 	)
 }

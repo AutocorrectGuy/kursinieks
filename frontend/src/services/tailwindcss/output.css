@@ -781,6 +781,14 @@ video {
   height: 2rem;
 }
 
+.h-20{
+  height: 5rem;
+}
+
+.h-14{
+  height: 3.5rem;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -837,6 +845,18 @@ video {
   width: 2rem;
 }
 
+.w-20{
+  width: 5rem;
+}
+
+.w-10{
+  width: 2.5rem;
+}
+
+.w-14{
+  width: 3.5rem;
+}
+
 .max-w-screen-xl{
   max-width: 1280px;
 }
@@ -855,6 +875,10 @@ video {
 
 .max-w-\[400px\]{
   max-width: 400px;
+}
+
+.max-w-\[360px\]{
+  max-width: 360px;
 }
 
 .translate-y-\[2px\]{
@@ -925,6 +949,10 @@ video {
 
 .grid-cols-9{
   grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-cols-5{
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -1040,6 +1068,11 @@ video {
   border-color: rgb(100 116 139 / var(--tw-border-opacity));
 }
 
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .border-b-sky-800{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(7 89 133 / var(--tw-border-opacity));
@@ -1141,6 +1174,21 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-jak-purple-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(157 8 108 / var(--tw-bg-opacity));
+}
+
+.bg-jak-purple-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(178 2 120 / var(--tw-bg-opacity));
+}
+
+.bg-jak-purple-700{
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 0 147 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-25{
@@ -1405,6 +1453,20 @@ video {
   color: rgb(46 47 51 / var(--tw-text-opacity));
 }
 
+.text-transparent{
+  color: transparent;
+}
+
+.text-jak-green-500{
+  --tw-text-opacity: 1;
+  color: rgb(174 201 8 / var(--tw-text-opacity));
+}
+
+.text-jak-purple-500{
+  --tw-text-opacity: 1;
+  color: rgb(255 47 209 / var(--tw-text-opacity));
+}
+
 .caret-transparent{
   caret-color: transparent;
 }
@@ -1483,6 +1545,21 @@ video {
 .hover\:bg-jak-gray-500:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(95 109 103 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-jak-green-400:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 243 40 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-jak-purple-800:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(178 2 120 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-jak-green-600:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 174 2 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-gradient-to-br:hover{

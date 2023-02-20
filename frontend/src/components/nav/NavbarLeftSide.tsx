@@ -34,7 +34,7 @@ const NavbarLeftSide = () => {
 			>
 				<div
 					className={[
-						'fixed py-4 px-1 w-screen',
+						'fixed py-4 px-1 w-screen max-w-[360px]',
 						navOpen ? 'left-0 h-full' : '',
 						navOpen && window.innerWidth < 640 ? 'w-screen' : '',
 					].join(' ')}

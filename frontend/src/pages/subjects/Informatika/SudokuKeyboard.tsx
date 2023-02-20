@@ -18,7 +18,6 @@ const SudokuKeyboard = ({ cellSize }: SudokuKeyboardType) => {
 					<div
 						className="cursor-pointer select-none text-center sm:rounded-lg sm:bg-slate-600 sm:px-8 hover:sm:bg-slate-500"
 						key={`sudoku-keyboard-btn${i}`}
-						onClick={(e) => console.log(btnValue)}
 					>
 						{btnValue}
 					</div>
