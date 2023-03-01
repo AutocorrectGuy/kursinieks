@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[5250],{5250:function(e,n,t){e.exports=t.p+"static/media/back_city_2.b6b9e856252e7b9f0799.png"}}]);

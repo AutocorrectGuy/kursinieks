@@ -9,6 +9,8 @@ type SudokuCellType = {
 	setSelected: React.Dispatch<React.SetStateAction<number | null>>
 	isSelected: boolean
 	cellSize: number
+	selected: number
+	activeCellState: [number | null, React.Dispatch<React.SetStateAction<number | null>>]
 }
 
 const SudokuCell = ({
@@ -20,7 +22,9 @@ const SudokuCell = ({
 	isSelected,
 	i,
 	cellSize,
+	activeCellState,
 }: SudokuCellType) => {
+	const [activeCell, setActiveCell] = activeCellState
 	const [calculatedBorders] = useState<string>(
 		[
 			!(i % 9) && 'border-l',
@@ -38,13 +42,15 @@ const SudokuCell = ({
 
 	const cellClass = (currValue: number | null) => {
 		let bgColor = ''
-		if (isSelected) {
-			bgColor += 'bg-[#BBDEFC]'
+
+		if (isSelected || (activeCell === currValue && activeCell !== null)) {
+			bgColor += 'bg-jak-purple-300'
 		} else if (isHighlighted) {
-			bgColor += 'bg-[#E2EBF4]'
+			bgColor += 'bg-jak-purple-200'
 		} else {
 			bgColor += 'bg-white'
 		}
+
 		return [
 			bgColor,
 			'flex items-center justify-center border-slate-500',
@@ -53,33 +59,36 @@ const SudokuCell = ({
 		].join(' ')
 	}
 
+	const handleClick = (i: number) => {
+		setHighlighted(() => {
+			const rowI = Math.floor(i / 9)
+			const rowStartI = rowI * 9
+			const colI = i - rowStartI
+			const blockStart = rowStartI + colI - 9 * (rowI % 3) - (colI % 3)
+
+			const cellsToHighlight = [
+				...[...Array(9)].map((_x, j) => j + rowStartI),
+				...[...Array(9)].map((_x, j) => j * 9 + colI),
+				...[...Array(9)].map((_x, j) => blockStart + (j % 3) + 3 * (j - (j % 3))),
+			]
+			return cellsToHighlight
+		})
+		setSelected(i)
+		setActiveCell(currentValue)
+	}
+
 	return (
-		<div
+		<input
+			type="text"
+			value={currentValue ?? ''}
+			onChange={(e) => setActiveCell(parseInt(e.target.value))}
 			style={cellStyles}
 			className={[
 				'cursor-pointer select-none text-center caret-transparent outline-none',
 				cellClass(currentValue),
 			].join(' ')}
-			onClick={() =>
-				setHighlighted(() => {
-					setSelected(() => i)
-
-					const rowI = Math.floor(i / 9)
-					const rowStartI = rowI * 9
-					const colI = i - rowStartI
-					const blockStart = rowStartI + colI - 9 * (rowI % 3) - (colI % 3)
-
-					return [
-						...[...Array(9)].map((x, j) => j + rowStartI),
-						...[...Array(9)].map((x, j) => j * 9 + colI),
-						...[...Array(9)].map((x, j) => blockStart + (j % 3) + 3 * (j - (j % 3))),
-					]
-				})
-			}
-		>
-			{currentValue}
-			{/* {i} */}
-		</div>
+			onClick={() => handleClick(i)}
+		/>
 	)
 }
 

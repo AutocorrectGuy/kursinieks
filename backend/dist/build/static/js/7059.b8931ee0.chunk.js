@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[7059],{7059:function(e){e.exports={hello:"world"}}}]);

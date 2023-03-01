@@ -16,7 +16,7 @@ const ProfileCard = () => {
 			<div className="flex h-10 items-center text-xl">
 				<div className="w-24 font-semibold text-jak-gray-100">Vārds:</div>
 				<input
-					className="mx-autoā h-full w-full rounded-lg bg-jak-gray-700 px-3 tracking-tight text-jak-gray-100 outline-none placeholder:font-medium placeholder:text-jak-gray-200 focus:outline-none"
+					className="mx-auto h-full w-full rounded-lg bg-jak-gray-700 px-3 tracking-tight text-jak-gray-100 outline-none placeholder:font-medium placeholder:text-jak-gray-200 focus:outline-none"
 					value={name}
 					onChange={(e) => setName(e.currentTarget.value)}
 					placeholder={'...'}

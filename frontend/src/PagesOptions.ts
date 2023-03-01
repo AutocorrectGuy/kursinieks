@@ -5,7 +5,7 @@ import {
 	faCrop,
 	faClipboard,
 	faCalculator,
-	faBlind,
+	faTree
 } from '@fortawesome/free-solid-svg-icons'
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
@@ -45,8 +45,8 @@ export const pagesOptions: NavOptionInterface[] = [
 		id: '9faa5592-a813-11ed-afa1-0242ac120002'
 	},
 	{
-		textValue: 'Viesmīlības pakalpojumi',
-		icon: faBlind,
+		textValue: 'Flappy Bird',
+		icon: faTree,
 		href: '/tema-2',
 		isActive: false,
 		isAchievement: true,
