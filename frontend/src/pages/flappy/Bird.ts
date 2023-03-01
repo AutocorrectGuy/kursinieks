@@ -39,7 +39,7 @@ export class Bird {
 		const birdH = birdSprite.sprite.h * birdSprite.sprite.scale
 		this.bird = {
 			sprite: birdSprite,
-			x: this.CANVAS_W * 0.22,
+			x: this.CANVAS_W * 0.12,
 			y: 0,
 			rotation: 0,
 			w: birdW,
@@ -74,8 +74,6 @@ export class Bird {
 			this.ACCELERATION < 0
 				? this.MAX_ROTATION_UP
 				: this.bird.rotation + this.ACCELERATION * this.ROTATION_FACTOR
-
-		console.log(Math.ceil((this.bird.rotation * 180) / Math.PI))
 	}
 
 	public render(ctx: CanvasRenderingContext2D) {

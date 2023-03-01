@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.20e37900.css",
-    "main.js": "/static/js/main.6c80a26f.js",
+    "main.css": "/static/css/main.d2a22077.css",
+    "main.js": "/static/js/main.e754d2a2.js",
     "static/js/5798.0bbcdcc8.chunk.js": "/static/js/5798.0bbcdcc8.chunk.js",
     "static/js/381.4ed195ed.chunk.js": "/static/js/381.4ed195ed.chunk.js",
     "static/js/9221.7cb6600f.chunk.js": "/static/js/9221.7cb6600f.chunk.js",
@@ -69,7 +69,7 @@
     "static/js/5658.946556ec.chunk.js": "/static/js/5658.946556ec.chunk.js",
     "static/js/4013.8bc2f1b5.chunk.js": "/static/js/4013.8bc2f1b5.chunk.js",
     "static/js/7059.b8931ee0.chunk.js": "/static/js/7059.b8931ee0.chunk.js",
-    "static/css/6451.e48db79c.chunk.css": "/static/css/6451.e48db79c.chunk.css",
+    "static/css/6451.577aab76.chunk.css": "/static/css/6451.577aab76.chunk.css",
     "static/js/6451.fe59b531.chunk.js": "/static/js/6451.fe59b531.chunk.js",
     "static/js/4179.6e2cd1ba.chunk.js": "/static/js/4179.6e2cd1ba.chunk.js",
     "static/media/gender (1).psd": "/static/media/gender (1).0bb0c1e4d596905253e7.psd",
@@ -104,14 +104,14 @@
     "static/media/eye (2).png": "/static/media/eye (2).8d605f8ebe08b9375b99.png",
     "static/media/eyebrow (2).png": "/static/media/eyebrow (2).2a76f614195756b36eeb.png",
     "index.html": "/index.html",
-    "main.20e37900.css.map": "/static/css/main.20e37900.css.map",
-    "main.6c80a26f.js.map": "/static/js/main.6c80a26f.js.map",
+    "main.d2a22077.css.map": "/static/css/main.d2a22077.css.map",
+    "main.e754d2a2.js.map": "/static/js/main.e754d2a2.js.map",
     "9690.04583ba1.chunk.js.map": "/static/js/9690.04583ba1.chunk.js.map",
-    "6451.e48db79c.chunk.css.map": "/static/css/6451.e48db79c.chunk.css.map",
+    "6451.577aab76.chunk.css.map": "/static/css/6451.577aab76.chunk.css.map",
     "6451.fe59b531.chunk.js.map": "/static/js/6451.fe59b531.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.20e37900.css",
-    "static/js/main.6c80a26f.js"
+    "static/css/main.d2a22077.css",
+    "static/js/main.e754d2a2.js"
   ]
 }

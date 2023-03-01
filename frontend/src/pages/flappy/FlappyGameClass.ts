@@ -10,7 +10,7 @@ export default class FlappyGameClass extends CanvasGameClass {
 		{
 			FILE_NAME: 'bird_2.png',
 			NAME: 'bird',
-			DESIRED_HEIGHT: 128,
+			DESIRED_HEIGHT: Math.min(this.canvas.w, this.canvas.h) * 0.16,
 			ASSET_COUNT: 1,
 		},
 		{
@@ -21,7 +21,6 @@ export default class FlappyGameClass extends CanvasGameClass {
 		},
 		{
 			FILE_NAME: 'back_city.png',
-			// FILE_NAME: 'test_bg_1.jpg',
 			NAME: 'background',
 			DESIRED_HEIGHT: this.canvas.h,
 			ASSET_COUNT: 3,
@@ -52,7 +51,7 @@ export default class FlappyGameClass extends CanvasGameClass {
 
 	init = () => {
 		if(!this.ctx) return
-		
+
 		this.ctx.imageSmoothingEnabled = false;
 
 		if (!this.backgroundSprite) throw new Error('no background asset imported')

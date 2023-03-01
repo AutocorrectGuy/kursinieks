@@ -16,9 +16,9 @@ const NavbarLeftSide = () => {
 	return (
 		<div
 			className={[
-				'fixed flex',
+				'fixed flex z-[999]',
 				navOpen && window.innerWidth < 640
-					? 'z-50 h-screen w-full'
+					? 'h-screen w-full'
 					: 'w-full max-w-[300px]',
 			].join(' ')}
 		>

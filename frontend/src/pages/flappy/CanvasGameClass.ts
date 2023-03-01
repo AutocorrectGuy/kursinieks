@@ -11,7 +11,7 @@ export default class CanvasGameClass {
 	constructor() {
 		this.canvas = {
 			w: window.innerWidth,
-			h: window.innerHeight - 64,
+			h: window.innerHeight
 		}
 		this.dt = {
 			prev: Date.now(),

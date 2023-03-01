@@ -2,64 +2,58 @@ import { spriteType } from './Types'
 
 export class PharallaxBG {
 	private bg: spriteType
-
-	private L1: {
-		speed: number
-		x: number[]
-		w: number
-		h: number
-		count: number
-		maxScrollW: number
-		spriteIndex: number
-	}
+	private speed: number
+	private x: number[]
+	private w: number
+	private h: number
+	private spriteX: number
+	private spriteW: number
+	private count: number
+	private maxScrollW: number
+	private spriteIndex: number
+	private scrollSpeed: number = 3
 
 	constructor({ bgSprite, spriteIndex }: { bgSprite: spriteType; spriteIndex: number }) {
 		this.bg = bgSprite
-		const bgWidth = (this.bg.sprite.w * this.bg.sprite.scale) / 3
+		const originalBgWidth = this.bg.sprite.w / this.bg.frame.max
+		const scaledBgWidth = (this.bg.sprite.w * this.bg.sprite.scale) / this.bg.frame.max
 		const bgHeight = this.bg.sprite.h * this.bg.sprite.scale
+		const count = Math.max(Math.ceil(window.innerWidth / scaledBgWidth), 2)
 
-		//TODO: calculate automatically how many images should need to cover whole bg
-		const count = 3
-
-		this.L1 = {
-			speed: 3 * spriteIndex,
-			x: [...Array(count)].map((_x, i) => i * bgWidth),
-			w: bgWidth,
-			h: bgHeight,
-			count: count,
-			maxScrollW: bgWidth * (count - 1),
-			spriteIndex
-		}
+		this.speed = this.scrollSpeed * spriteIndex
+		this.x = [...Array(count)].map((_x, i) => i * scaledBgWidth)
+		this.w = scaledBgWidth
+		this.h = bgHeight
+		this.spriteIndex = spriteIndex
+		this.spriteX = originalBgWidth * this.spriteIndex + 1 // 1px offset for safety
+		this.spriteW = originalBgWidth - 2 // 2 px offest for safety
+		this.count = count
+		this.maxScrollW = scaledBgWidth * (count - 1)
 	}
 
 	public update() {
 		if (!this.bg) return
 
-		for (let i = 0; i < this.L1.count; i++) this.L1.x[i] -= this.L1.speed
-		for (let i = 0; i < this.L1.count; i++)
-			if (this.L1.x[i] <= -this.L1.w)
-				this.L1.x[i] = this.L1.maxScrollW + this.L1.x[(i + 1) % this.L1.count]
+		for (let i = 0; i < this.count; i++) this.x[i] -= this.speed
+		for (let i = 0; i < this.count; i++)
+			if (this.x[i] <= -this.w) this.x[i] = this.maxScrollW + this.x[(i + 1) % this.count]
 	}
 
 	public render(ctx: CanvasRenderingContext2D) {
 		if (!this.bg) return
 
-		const color = ['red', 'green', 'blue']
-		for (let i = 0; i < this.L1.count; i++) {
+		for (let i = 0; i < this.count; i++) {
 			ctx.drawImage(
 				this.bg.img,
-				(this.bg.sprite.w / 3) * this.L1.spriteIndex + 1,
+				this.spriteX,
 				0,
-				this.bg.sprite.w / 3 - 2,
+				this.spriteW,
 				this.bg.sprite.h,
-				this.L1.x[i],
+				this.x[i],
 				0,
-				this.L1.w,
-				this.L1.h
+				this.w,
+				this.h
 			)
-			// ctx.strokeStyle = color[i]
-			// ctx.lineWidth = 6
-			// ctx.strokeRect(this.L1.x[i], 0, this.L1.w, this.L1.h)
 		}
 	}
 }

@@ -14,7 +14,7 @@ const FlappyGame = () => {
 		canvas.setAttribute('height', `${game.canvas.h}px`)
 		canvas.addEventListener('click', game.handleClick)
 		game.ctx = canvas.getContext('2d')
-		
+
 		// Load all images
 		const promises: Promise<namedHTMLImageElement>[] = game.IMPORT_IMG_INFO_MAP.map(
 			({ FILE_NAME, DESIRED_HEIGHT }, importIndex) => {
@@ -26,7 +26,7 @@ const FlappyGame = () => {
 								image,
 								name: game.IMPORT_IMG_INFO_MAP[importIndex].NAME,
 								assetCount: game.IMPORT_IMG_INFO_MAP[importIndex].ASSET_COUNT,
-								scale: DESIRED_HEIGHT / image.height 
+								scale: DESIRED_HEIGHT / image.height,
 							}
 							resolve(nameHTMLImageElement)
 						}
@@ -57,11 +57,11 @@ const FlappyGame = () => {
 			sprite: {
 				w: birdAsset.image.width / birdAsset.assetCount,
 				h: birdAsset.image.height,
-				scale: birdAsset.scale
+				scale: birdAsset.scale,
 			},
 			frame: {
 				curr: 0,
-				max: 3,
+				max: 4,
 			},
 		}
 
@@ -72,26 +72,28 @@ const FlappyGame = () => {
 			sprite: {
 				w: pipeAsset.image.width / pipeAsset.assetCount,
 				h: pipeAsset.image.height,
-				scale: pipeAsset.scale
+				scale: pipeAsset.scale,
 			},
 			frame: {
 				curr: 0,
-				max: 3,
+				max: 1,
 			},
 		}
 
-		const backgroundAsset = images.find(({ name }) => name === 'background') as namedHTMLImageElement
+		const backgroundAsset = images.find(
+			({ name }) => name === 'background'
+		) as namedHTMLImageElement
 
 		game.backgroundSprite = {
 			img: backgroundAsset.image,
 			sprite: {
 				w: backgroundAsset.image.width,
 				h: backgroundAsset.image.height,
-				scale: backgroundAsset.scale
+				scale: backgroundAsset.scale,
 			},
 			frame: {
 				curr: 0,
-				max: 0,
+				max: 3,
 			},
 		}
 	}
@@ -108,16 +110,14 @@ const FlappyGame = () => {
 	}, [images])
 
 	return (
-		<div className="mt-16">
-			<canvas
-				ref={canvasRef}
-				id="canvas"
-				className="bg-black"
-				style={{
-					position: 'absolute',
-				}}
-			/>
-		</div>
+		<canvas
+			ref={canvasRef}
+			id="canvas"
+			className="bg-black"
+			style={{
+				position: 'absolute',
+			}}
+		/>
 	)
 }
 
