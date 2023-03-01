@@ -4,11 +4,11 @@ export const degToRad = (deg: number) => 0.01745329252 * deg
 export class Bird {
 	private CANVAS_W: number
 	private CANVAS_H: number
-	private GRAVITY = 0.5
+	private JUMP_HEIGHT: number
+	private GRAVITY: number
 	private ROTATION_FACTOR = 0.004
 	private ACCELERATION = 0
 	private ACCELERATION_FACTOR = 2
-	private JUMP_HEIGHT = 20
 	private BIRD_IS_DEAD = false
 	private MAX_ROTATION_UP = degToRad(15)
 
@@ -34,6 +34,8 @@ export class Bird {
 	}) {
 		this.CANVAS_W = canvasW
 		this.CANVAS_H = canvasH
+		this.JUMP_HEIGHT = this.CANVAS_H * 0.02
+		this.GRAVITY = this.CANVAS_H * 0.0005
 
 		const birdW = birdSprite.sprite.w * birdSprite.sprite.scale
 		const birdH = birdSprite.sprite.h * birdSprite.sprite.scale

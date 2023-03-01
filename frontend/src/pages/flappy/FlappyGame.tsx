@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
+import { Helmet } from 'react-helmet'
 import FlappyGameClass from './FlappyGameClass'
 import { namedHTMLImageElement } from './Types'
+import HeaderHelmet from '../../layouts/HeaderHelmet'
 
 const FlappyGame = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -110,14 +112,17 @@ const FlappyGame = () => {
 	}, [images])
 
 	return (
-		<canvas
-			ref={canvasRef}
-			id="canvas"
-			className="bg-black"
-			style={{
-				position: 'absolute',
-			}}
-		/>
+		<div>
+			<HeaderHelmet pageTitle="Putns | Barkava"/>
+			<canvas
+				ref={canvasRef}
+				id="canvas"
+				className="bg-black"
+				style={{
+					position: 'absolute',
+				}}
+			/>
+		</div>
 	)
 }
 

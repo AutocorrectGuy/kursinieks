@@ -4,6 +4,7 @@ import { pagesOptions } from '../../PagesOptions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
+import HeaderHelmet from '../../layouts/HeaderHelmet';
 const Achievements = () => {
 	const [completedAchievements] = useState<string[]>(() => {
 		const achievementsList = localStorage.getItem('achievements')
@@ -15,6 +16,7 @@ const Achievements = () => {
 	)
 	return (
 		<div className="flex min-h-screen w-full flex-col items-center">
+			<HeaderHelmet pageTitle="Sasniegumi | Barkava"/>
 			<div className="flex items-center">
 				<FontAwesomeIcon
 					icon={faStar}
