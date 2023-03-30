@@ -15,6 +15,7 @@ import Achievements from './pages/achievementPage/Achievements'
 import Informatika from './pages/subjects/Informatika/Informatika';
 import ProfilePage from './pages/profilePage/ProfilePage';
 import FlappyGame from './pages/flappy/FlappyGame'
+import WebGLTest from './pages/webglTest/WebGLTest'
 
 const App = () => (
 	<RouterProvider
@@ -39,7 +40,7 @@ const App = () => (
 								component = <FlappyGame />
 								break
 							case '/tema-3':
-								component = <GameLayout />
+								component = <WebGLTest />
 								break
 							case '/tema-4':
 								component = <GameLayout />

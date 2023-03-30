@@ -53,7 +53,7 @@ export const pagesOptions: NavOptionInterface[] = [
 		id: 'a6d03472-a813-11ed-afa1-0242ac120002'
 	},
 	{
-		textValue: 'Matemātika',
+		textValue: 'WebGL test',
 		icon: faCalculator,
 		href: '/tema-3',
 		isActive: false,
